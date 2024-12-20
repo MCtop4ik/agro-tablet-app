@@ -1,11 +1,11 @@
 # Скриншоты приложения
 
-1. ![Скриншот 1](screenshots/localhost_4200_authentification.png)
-2. ![Скриншот 2](screenshots/localhost_4200_production-transactions.png)
-3. ![Скриншот 3](screenshots/localhost_4200_production-transactions%20(1).png)
-4. ![Скриншот 4](screenshots/localhost_4200_production-transactions%20(2).png)
-5. ![Скриншот 5](screenshots/localhost_4200_production-transactions%20(3).png)
-6. ![Скриншот 6](screenshots/localhost_4200_production-transactions%20(4).png)
+1. <img src="screenshots/localhost_4200_authentification.png" alt="Скриншот 1" height="30%" />
+2. <img src="screenshots/localhost_4200_production-transactions.png" alt="Скриншот 2" height="30%" />
+3. <img src="screenshots/localhost_4200_production-transactions%20(1).png" alt="Скриншот 3" height="30%" />
+4. <img src="screenshots/localhost_4200_production-transactions%20(2).png" alt="Скриншот 4" height="30%" />
+5. <img src="screenshots/localhost_4200_production-transactions%20(3).png" alt="Скриншот 5" height="30%" />
+6. <img src="screenshots/localhost_4200_production-transactions%20(4).png" alt="Скриншот 6" height="30%" />
 7. ![Скриншот 7](screenshots/localhost_4200_production-transactions%20(5).png)
 8. ![Скриншот 8](screenshots/localhost_4200_production-transactions%20(6).png)
 9. ![Скриншот 9](screenshots/localhost_4200_production-transactions%20(7).png)
