@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-row class="header-row">
+      <ion-col size="9" class="title-col">
+        <h1 class="title">Production Transactions</h1>
+      </ion-col>
+      <ion-col size="3" class="header-button-container">
+        <ion-button color="tertiary" (click)="openAccountSettings()" aria-label="Open Account Settings">
+          <img slot="icon-only" src="../../assets/user-account.png" class="user-account-icon" alt="User Account">
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="production_transactions.length > 0" class="table-container">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th id="farm">Farm</th>
+          <th id="field">Field</th>
+          <th id="date">Date</th>
+          <th id="hay-type">Hay Type</th>
+          <th id="hay-cut">Hay Cut</th>
+          <th id="total-hours">Total Hours</th>
+          <th id="tons-baled">Tons Baled</th>
+          <th id="bales-baled">Bales Baled</th>
+          <th id="moisture">Moisture, %</th>
+          <th id="acres">Acres</th>
+          <th id="btns">
+            <ion-button (click)="synchronise()" color="secondary" shape="round">Synchronise</ion-button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of sortByActive()">
+            <td headers="farm"><span class="label">Farm:</span> {{ get_farm_name(row['Farm']) }}</td>
+            <td headers="field"><span class="label">Field:</span> {{ get_field_id(row['Field']) }}</td>
+            <td headers="date"><span class="label">Date:</span> {{ extract_date(row['Date']) }}</td>
+            <td headers="hay-type"><span class="label">Hay Type:</span> {{ get_hay_type_description(row['Hay_Type']) }}</td>
+            <td headers="hay-cut"><span class="label">Hay Cut:</span> {{ get_hay_cut_description(row['Hay_Cut']) }}</td>
+            <td headers="total-hours"><span class="label">Total Hours:</span> {{ get_integer_field(row['Total_Hours']) }}</td>
+            <td headers="tons-baled"><span class="label">Tons Baled:</span> {{ get_integer_field(row['Tons_Baled']) }}</td>
+            <td headers="bales-baled"><span class="label">Bales Baled:</span> {{ get_integer_field(row['Bales_Baled']) }}</td>
+            <td headers="moisture"><span class="label">Moisture:</span> {{ get_moisture(row['Moisture']) }}</td>
+            <td headers="acres"><span class="label">Acres:</span> {{ get_integer_field(row['Acres']) }}</td>
+          <td headers="btns">
+            <ion-button (click)="openUpdateForm(row)" shape="round" fill="outline" color="tertiary" expand="full" class="table-button">Edit</ion-button>
+            <ion-button (click)="openUpdateForm(row)" shape="round" fill="outline" color="tertiary" expand="full" class="card-button">Edit</ion-button>
+            <br>
+            <ion-button (click)="openStatisticsForm(row)" shape="round" fill="outline" color="tertiary" expand="full" class="table-button">Statistics</ion-button>
+            <ion-button (click)="openStatisticsForm(row)" shape="round" fill="outline" color="tertiary" expand="full" class="card-button">Statistics</ion-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="production_transactions.length == 0" class="no-data-container">
+    <h1>No data</h1>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" (click)="openCreateForm()" *ngIf="production_transactions.length == 0" color="primary">Create</ion-button>
+    <ion-button expand="block" (click)="openCreateForm()" class="create-btn" *ngIf="production_transactions.length != 0" color="primary">Create</ion-button>
+  </ion-toolbar>
+</ion-footer>
+
+<div class="mobile-synchronise-button-container">
+  <ion-button (click)="synchronise()" color="secondary" shape="round" expand="block">Synchronise</ion-button>
+</div>

@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="onCancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>
+      <h3>Create production transaction</h3>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onSubmit()" [strong]="true">Confirm</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form">
+    <ion-list>
+      <ion-item>
+        <ion-select label='Farm' label-placement="stacked" formControlName="Farm" (ionChange)="onFarmChange($event)">
+          <ion-select-option *ngFor="let farm of farms" [value]="farm['Record_PK']">{{ farm['Farm_Name'] }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item *ngIf="filteredFields.length > 0">
+        <ion-select label='Field' label-placement="stacked" formControlName="Field" (ionChange)="onSelectedFieldChange($event)">
+          <ion-select-option *ngFor="let field of filteredFields" [value]="field['Record_PK']">{{ field['Field_ID'] }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Date</ion-label>
+        <br>
+        <ion-datetime displayFormat="DD-MM-YYYY" formControlName="Date" label-position="stacked" presentation="date" [preferWheel]="true"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-select label='Hay Type' label-placement="stacked" formControlName="Hay_Type">
+          <ion-select-option *ngFor="let hay_type of hay_types" [value]="hay_type.Keyword_CK">{{ hay_type.Description }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select label='Hay Cut' label-placement="stacked" formControlName="Hay_Cut">
+          <ion-select-option *ngFor="let hay_cut of hay_cuts" [value]="hay_cut.Keyword_CK">{{ hay_cut.Description }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select label='Start Time Hours' label-placement="stacked" formControlName="Start_Time_Hours">
+          <ion-select-option *ngFor="let time_hour of time_hours" [value]="time_hour.Keyword_CK">{{ time_hour.Description }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select label='Start Time Minutes' label-placement="stacked" formControlName="Start_Time_Minutes">
+          <ion-select-option *ngFor="let time_minute of time_minutes" [value]="time_minute.Keyword_CK">{{ time_minute.Description }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select label='End Time Hours' label-placement="stacked" formControlName="End_Time_Hours">
+          <ion-select-option *ngFor="let time_hour of time_hours" [value]="time_hour.Keyword_CK">{{ time_hour.Description }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select label='End Time Minutes' label-placement="stacked" formControlName="End_Time_Minutes">
+          <ion-select-option *ngFor="let time_minute of time_minutes" [value]="time_minute.Keyword_CK">{{ time_minute.Description }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-input labelPlacement="stacked" label="Tons Baled" formControlName="Tons_Baled" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input labelPlacement="stacked" label="Bales Baled" formControlName="Bales_Baled" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input labelPlacement="stacked" label="Moisture" formControlName="Moisture" type="text"></ion-input>
+      </ion-item>
+      </ion-list>
+  </form>
+</ion-content>

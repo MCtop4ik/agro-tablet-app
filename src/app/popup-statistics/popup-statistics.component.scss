@@ -1,0 +1,24 @@
+ion-content {
+    --background: #f4f4f4;
+    padding: 16px;
+  }
+  
+  .label {
+    font-weight: bold;
+    margin-right: 8px;
+  }
+
+  ion-item {
+    --inner-padding-start: 0;
+    --inner-padding-end: 0;
+    --min-height: 44px;
+    --padding-top: 8px;
+    --padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+
+  ion-note {
+    font-size: 1.2em;
+    color: #333;
+    margin-right: 20px;
+  }

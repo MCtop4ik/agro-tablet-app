@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="onCancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>
+      <h3>Statistics</h3>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label class="label">Tons/Acre:</ion-label>
+          <ion-note slot="end">{{ get_integer_field(data['Tons_Acre']) }}</ion-note>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label class="label">Bales/Acre:</ion-label>
+          <ion-note slot="end">{{ get_integer_field(data['Bales_Acre']) }}</ion-note>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label class="label">Tons/Hour:</ion-label>
+          <ion-note slot="end">{{ get_integer_field(data['Tons_Hour']) }}</ion-note>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label class="label">Bales/Hour:</ion-label>
+          <ion-note slot="end">{{ get_integer_field(data['Bales_Hour']) }}</ion-note>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

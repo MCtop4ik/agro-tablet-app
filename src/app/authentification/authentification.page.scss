@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.auth-form {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: calc(50% - 150px);
+    margin-top: calc(100% - 90%);
+}
+
+.auth-form ion-input {
+    margin-bottom: 12px;
+}
+
+.auth-form ion-button {
+    margin-top: 12px;
+    --background: #3880ff;
+    --border-radius: 4px;
+}
+
+.logo img {
+    width: 160px;
+    height: 90px;
+    padding-left: calc(50% - 80px);
+}
+
+.logo ion-item {
+    --highlight-height: 0;
+    --highlight-background-focused: none;
+    --highlight-background-focused-active: none;
+    --highlight-background-focused-disabled: none;
+  }

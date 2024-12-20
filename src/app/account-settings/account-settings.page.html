@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Account Settings</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">
+        <ion-list lines="full">
+          <ion-item>
+            <ion-button fill="clear" (click)="change_tab('profile-info')">Profile Info</ion-button>
+          </ion-item>
+          <ion-item>
+            <ion-button fill="clear" (click)="change_tab('change-password')">Change Password</ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+
+      <ion-col size="8">
+        <app-profile-info *ngIf="current_tab == 'profile-info'"></app-profile-info>
+        <app-change-password *ngIf="current_tab == 'change-password'"></app-change-password>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-grid>
+  <form [formGroup]="profileForm" (ngSubmit)="edit_profile_info()">
+    <ion-row>      
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">First Name</ion-label>
+          <ion-input type="text" formControlName="first_name"></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="formControls['first_name'].errors?.['required'] && formControls['first_name'].touched">
+          First Name is required
+        </ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Last Name</ion-label>
+          <ion-input type="text" formControlName="last_name"></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="formControls['last_name'].errors?.['required'] && formControls['last_name'].touched">
+          Last Name is required
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="text" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="formControls['email'].errors?.['required'] && formControls['email'].touched">
+          Email is required
+        </ion-text>
+        <ion-text color="danger" *ngIf="formControls['email'].errors?.['email'] && formControls['email'].touched">
+          Invalid email format
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-button [disabled]="!profileForm.valid" type="submit">Save</ion-button>
+    <ion-button (click)="logout()">Logout</ion-button>
+  </form>
+</ion-grid>

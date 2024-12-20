@@ -1,0 +1,141 @@
+.header-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header-row {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-col {
+  flex: 1;
+}
+
+.user-account-icon {
+  height: 45px;
+  width: 45px;
+}
+
+.title {
+  text-align: left;
+  margin-top: 20px;
+  margin-left: 5%;
+  background: linear-gradient(#a51f1f, #3e4377);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+
+  thead {
+    background-color: #f2f2f2;
+
+    th {
+      padding: 12px 15px;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #dddddd;
+
+      td {
+        padding: 12px 15px;
+        position: relative;
+
+        .label {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.no-data-container {
+  text-align: center;
+}
+
+ion-button {
+  &.create-btn {
+    margin-top: 10px;
+  }
+}
+
+.table-button {
+  display: contents;
+}
+
+.card-button {
+  display: none;
+}
+
+@media (max-width: 1248px) {
+  .styled-table {
+    display: block;
+
+    thead {
+      display: none;
+    }
+
+    tbody {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid #dddddd;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        td {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 10px 0;
+          border: none;
+
+          .label {
+            display: inline-block;
+            font-weight: bold;
+            margin-right: 10px;
+            color: #555;
+          }
+
+          &:last-child {
+            justify-content: center;
+            margin-top: 10px;
+          }
+        }
+
+        .table-button {
+          display: none;
+        }
+
+        .card-button {
+          display: contents;
+        }
+      }
+    }
+  }
+
+  .mobile-synchronise-button-container {
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+  }
+}
