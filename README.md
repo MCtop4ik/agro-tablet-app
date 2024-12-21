@@ -1,4 +1,5 @@
 # Скриншоты приложения
+1. ![UI блоксхема](screenshots/Screenshot 2024-12-21 at 22.17.11.png)
 
 # Версия для планшета
 1. ![Скриншот 7](screenshots/localhost_4200_production-transactions%20(5).png)
