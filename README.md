@@ -1,5 +1,7 @@
+# UI блоксхема
+![UI блоксхема](screenshots/ui-scheme.png)
+
 # Скриншоты приложения
-1. ![UI блоксхема](screenshots/ui-scheme.png)
 
 # Версия для планшета
 1. ![Скриншот 7](screenshots/localhost_4200_production-transactions%20(5).png)
